@@ -1,0 +1,24 @@
+- name: creating directory mahesh/ansible
+  become: yes
+  file:
+   path: /home/ubuntu/mahesh/ansible
+   owner: mahesh
+   group: mahesh
+   state: directory
+
+- name: creating directory mahesh/tomcat
+  become: yes
+  file:
+   path: /home/ubuntu/mahesh/tomcat
+   owner: mahesh
+   group: mahesh
+   state: directory
+
+- name: creating file mahesh/ansible/cloud
+  become: yes
+  file:
+   path: /home/ubuntu/mahesh/ansible/cloud
+   owner: mahesh
+   group: mahesh
+   state: touch
+

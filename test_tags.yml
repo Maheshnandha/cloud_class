@@ -1,0 +1,14 @@
+- hosts: machine1
+  become: yes
+  tasks:
+        - name: Install Zip
+          become: yes
+          apt: name=zip state=latest
+          tags: 
+               - mahesh
+
+        - name: Install awscli
+          become: yes
+          apt: name=awscli state=latest
+          tags: 
+               - nandha

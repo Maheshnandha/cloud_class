@@ -1,0 +1,11 @@
+- hosts: machine1
+  become: yes
+  roles:
+#        - adduser
+#        - addgroup
+        - dirfile
+#        - install
+#        - java8
+#        - maven
+#        - tomcat8
+

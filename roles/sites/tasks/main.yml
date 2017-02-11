@@ -1,0 +1,82 @@
+- name: Update
+  apt: update
+  apt: update_cache=yes
+  become: yes
+
+- name: zip file
+  become: yes
+  apt: name=zip state=latest
+
+- name: Java file
+  become: yes
+  apt: name=java state=latest
+
+- name: unzip file
+  become: yes
+  apt: name=unzip state=latest
+
+- name: git file
+  become: yes
+  apt: name=git state=latest
+
+- name: awscli file
+  become: yes
+  apt: name=awscli state=latest
+
+- name: tree file
+  become: yes
+  apt: name=tree state=latest
+
+- name: tomcat file
+  become: yes
+  apt: name=tomcat state=latest
+
+- name: maven file
+  become: yes
+  apt: name=maven state=latest
+
+
+- name: creating directory mahesh
+  become: yes
+  file:
+   path: /home/ubuntu/mahesh
+   owner: ubuntu
+   group: ubuntu
+   state: directory
+
+- name: creating file with surname
+  become: yes
+  file:
+   path: /home/ubuntu/mahesh/maheshnanda
+   owner: ubuntu
+   group: ubuntu
+   state: touch
+
+- name: creating username mahesh
+  become: yes
+  user:
+   name: mahesh
+   state: present 
+
+- name: creating Group as mahesh
+  become: yes
+  group:
+   name: mahesh
+   state: present
+
+- name: creating directory mahesh/ansible
+  become: yes
+  file:
+   path: /home/ubuntu/mahesh/ansible
+   owner: mahesh
+   group: mahesh
+   state: directory
+
+- name: creating file mahesh/ansible/cloud
+  become: yes
+  file:
+   path: /home/ubuntu/mahesh/ansible/cloud
+   owner: mahesh
+   group: mahesh
+   state: touch
+

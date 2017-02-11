@@ -1,0 +1,17 @@
+- name: creating username mahesh
+  become: yes
+  user:
+   name: mahesh
+   state: present 
+
+- name: creating username nandha
+  become: yes
+  user:
+   name: nandha
+   state: present
+
+- name: creating new_username
+  become: yes
+  user:
+   name: "{{ user }}"
+   state: present

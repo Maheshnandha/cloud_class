@@ -1,0 +1,19 @@
+- name: zip Install
+  become: yes
+  apt: name=zip state=latest
+
+- name: unzip Install
+  become: yes
+  apt: name=unzip state=latest
+
+- name: git Install
+  become: yes
+  apt: name=git state=latest
+
+- name: awscli Install
+  become: yes
+  apt: name=awscli state=latest
+
+- name: tree Install
+  become: yes
+  apt: name=tree state=latest

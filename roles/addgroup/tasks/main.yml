@@ -1,0 +1,6 @@
+- name: creating Group as mahesh
+  become: yes
+  group:
+   name: mahesh
+   state: present
+

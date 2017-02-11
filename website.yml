@@ -1,0 +1,18 @@
+---
+- hosts: localmachine
+  tasks:
+    - name: check process
+      shell: "ps -ef | grep tomcat | grep -v grep | wc -l"
+      register: tomcat_process
+
+    - name: stop tomcat
+      become: yes
+      service: name=tomcat state=stopped
+      when: "tomcat_process.stdout != 0"
+      
+    - name: copying artifact
+      copy: src=Cloudlearners.war dest=/opt/tomcat/webapps/ owner=aws group=aws
+
+    - name: start tomcat
+      become: yes
+      service: name=tomcat state=started
